@@ -1,0 +1,71 @@
+version: '2'
+
+services:
+  rabbitMq-app:
+    container_name: rabbitMq-app
+    image: 421972709577.dkr.ecr.us-east-1.amazonaws.com/api:local
+    ports:
+      - 8093:80
+    links:
+      - rabbitMq-mysql
+      - rabbitMq-redis
+      - rabbitMq-rabbitmq
+    volumes:
+      - .:/var/www/app
+    networks:
+      rh-network:
+        aliases:
+         - rabbitMq-app
+
+  rabbitMq-mysql:
+    container_name: rabbitMq-mysql
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: 'rabbitMq'
+      MYSQL_USER: 'rabbitMq'
+      MYSQL_PASSWORD: 'rabbitMq'
+      MYSQL_ROOT_PASSWORD: 'root'
+    volumes:
+      - db-data:/var/lib/mysql
+    ports:
+      - 3305:3306
+    networks:
+      rh-network:
+        aliases:
+          - rabbitMq-mysql
+
+  rabbitMq-redis:
+    container_name: rabbitMq-redis
+    image: redis:latest
+    ports:
+      - 6385:6379
+    networks:
+      rh-network:
+        aliases:
+          - rabbitMq-redis
+
+  rabbitMq-rabbitmq:
+    container_name: rabbitMq-rabbitmq
+    image: rabbitmq:3-management
+    hostname: rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - 8899:15672
+    networks:
+      rh-network:
+        aliases:
+          - rabbitMq-rabbitmq
+
+volumes:
+  logs:
+    driver: local
+  db-data:
+    driver: local
+  s3-data:
+    driver: local
+
+networks:
+  rh-network:
+    driver: bridge

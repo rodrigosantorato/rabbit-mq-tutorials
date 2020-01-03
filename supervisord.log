@@ -1,0 +1,27 @@
+2019-12-27 14:12:00,622 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2019-12-27 14:12:00,626 INFO supervisord started with pid 1
+2019-12-27 14:12:01,627 INFO spawned: 'nginx' with pid 7
+2019-12-27 14:12:01,629 INFO spawned: 'php-fpm' with pid 8
+2019-12-27 14:12:01,630 INFO spawned: 'queue-listen_00' with pid 9
+2019-12-27 14:12:02,676 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-27 14:12:02,676 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-27 14:12:02,676 INFO success: queue-listen_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-27 21:01:20,829 WARN received SIGTERM indicating exit request
+2019-12-27 21:01:20,867 INFO waiting for nginx, php-fpm, queue-listen_00 to die
+2019-12-27 21:01:20,993 INFO stopped: queue-listen_00 (terminated by SIGTERM)
+2019-12-27 21:01:20,993 INFO reaped unknown pid 11312
+2019-12-27 21:01:21,116 INFO stopped: php-fpm (exit status 0)
+2019-12-27 21:01:21,213 INFO stopped: nginx (exit status 0)
+2019-12-30 18:07:51,601 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2019-12-30 18:07:51,604 INFO supervisord started with pid 1
+2019-12-30 18:07:52,607 INFO spawned: 'nginx' with pid 7
+2019-12-30 18:07:52,609 INFO spawned: 'php-fpm' with pid 8
+2019-12-30 18:07:52,611 INFO spawned: 'queue-listen_00' with pid 9
+2019-12-30 18:07:53,835 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-30 18:07:53,835 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-30 18:07:53,835 INFO success: queue-listen_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-12-30 19:05:21,429 WARN received SIGTERM indicating exit request
+2019-12-30 19:05:21,434 INFO waiting for nginx, php-fpm, queue-listen_00 to die
+2019-12-30 19:05:21,437 INFO stopped: queue-listen_00 (terminated by SIGTERM)
+2019-12-30 19:05:21,452 INFO stopped: php-fpm (exit status 0)
+2019-12-30 19:05:21,497 INFO stopped: nginx (exit status 0)
